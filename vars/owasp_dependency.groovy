@@ -3,6 +3,7 @@ def call(){
   // dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
                 sh '''
                 dependency-check.sh \
+                    --data /var/lib/jenkins/owasp-data \
                     --project "Chat-App" \
                     --scan . \
                     --format "ALL" \
