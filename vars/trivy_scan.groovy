@@ -41,3 +41,22 @@ def call(){
 // ✅ Full meaning:
 
 // “Run a Trivy file system scan on the current directory to find vulnerabilities.”
+
+// def call(){
+//   // Scan current directory and output results as JSON
+//   sh """
+//     trivy fs . \
+//       --severity HIGH,CRITICAL \
+//       --exit-code 1 \
+//       --format json \
+//       --output trivy-report.json
+//   """
+// }
+// Explanation of added flags:
+// --severity HIGH,CRITICAL → Only show high and critical vulnerabilities.
+
+// --exit-code 1 → Fails the Jenkins build if vulnerabilities are found.
+
+// --format json → Saves structured output for later parsing or archiving.
+
+// --output trivy-report.json → Writes report to a file instead of console.
